@@ -42,9 +42,29 @@ export class AppController {
     data.report.push(newReport);
     return newReport;
   }
+
   @Put(':id')
-  updateReport() {
-    return 'updated';
+  updateReport(
+    @Param('type') type: string,
+    @Param('id') id: string,
+    @Body() body: { amount: number; source: string },
+  ) {
+    const reportType =
+      type === 'income' ? ReportType.INCOME : ReportType.EXPENSE;
+    const reportToUpdate = data.report
+      .filter((report) => report.type === reportType)
+      .find((report) => report.id === id);
+
+    if (!reportToUpdate) return;
+    const reportIndex = data.report.findIndex(
+      (report) => report.id === reportToUpdate.id,
+    );
+    data.report[reportIndex] = {
+      ...data.report[reportIndex],
+      ...body,
+      updated_at: new Date(),
+    };
+    return data.report[reportIndex];
   }
   @Delete(':id')
   deleteDelete() {
