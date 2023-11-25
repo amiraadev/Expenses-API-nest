@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-const data :Data = {
+export const data :Data = {
   report: [],
 };
 
@@ -10,7 +10,7 @@ interface Data {
     amount: number;
     created_at: Date;
     updated_at: Date;
-    type: string;
+    type: ReportType;
   }[];
 }
 
@@ -25,5 +25,5 @@ data.report.push({
     amount: 7500,
     created_at: new Date(),
     updated_at: new Date(),
-    type: "expense",
+    type: ReportType.INCOME,
 })
