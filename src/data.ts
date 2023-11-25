@@ -14,6 +14,11 @@ interface Data {
   }[];
 }
 
+enum ReportType {
+    INCOME = "income",
+    EXPENSE = "expense"
+}
+
 data.report.push({
     id: "uuid",
     source: "Salary",
