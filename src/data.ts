@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-enum ReportType {
+export enum ReportType {
     INCOME = "income",
     EXPENSE = "expense"
 }
