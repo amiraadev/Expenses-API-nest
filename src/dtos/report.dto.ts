@@ -31,7 +31,13 @@ export class ResponseReportDto {
     source: string;
     amount: number;
     created_at: Date;
+    
     @Exclude()
     updated_at: Date;
+
     type: ReportType;
+
+    constructor(partial: Partial<ResponseReportDto>){
+        Object.assign(this, partial);
+    }
 }
