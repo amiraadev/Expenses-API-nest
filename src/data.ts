@@ -76,11 +76,3 @@ interface Data {
 }
 
 
-data.report.push({
-    id: "uuid",
-    source: "Salary",
-    amount: 7500,
-    created_at: new Date(),
-    updated_at: new Date(),
-    type: ReportType.INCOME,
-})
