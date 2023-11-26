@@ -7,6 +7,6 @@ export class SummaryController {
 
   @Get()
   getSummary() {
-    this.summaryService.calculateSummary();
+    return this.summaryService.calculateSummary();
   }
 }
